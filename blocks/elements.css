@@ -1,0 +1,80 @@
+.elements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px 17px;
+  max-width: 880px;
+  width: 100%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.elements__card {
+  max-width: 282px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.elements__card-image {
+  max-width: 282px;
+  width: 100%;
+}
+
+.elements__card-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.elements__card-name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  margin-top: 25px;
+  margin-left: 21px;
+}
+
+.elements__card-like {
+  box-sizing: border-box;
+  width: 21px;
+  height: 19px;
+  border: none;
+  margin: auto;
+  background: none;
+  background-image: url(../images/Like.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 21px;
+}
+
+.elements__card-like:hover {
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 621px) and (max-width: 910px) {
+  .elements {
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    max-width: 585px;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 620px) {
+  .elements {
+    grid-template-columns: 1fr;
+    margin: auto;
+    max-width: 282px;
+    width: 100%;
+  }
+}
