@@ -1,7 +1,7 @@
 # Tripleten web_project_around
 
-Poyecto 7: Web Project Around US (Javascript básico y DOM)
-En este proyecto aplicamos funciones basicas adquiridas de Javascript con el DOM en un popup, diseño aplicado con figma.
+Poyecto 8: Web Project Around US (Javascript básico y DOM)
+En este proyecto aplicamos funciones basicas adquiridas de Javascript con el DOM, hicimos la pagina dinamica con las ventanas emergentes y su funcionalidad en dar like, agregar y borrar tarjetas.
 
 # Tecnologias y tecnicas utilizadas
 

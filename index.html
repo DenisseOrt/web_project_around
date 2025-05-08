@@ -44,74 +44,7 @@
         </div>
         <button class="profile__info-button-add"></button>
       </section>
-      <section class="elements">
-        <div class="elements__card">
-          <img
-            src="./images/Yosemite.png"
-            alt="Valle de Yosemite"
-            class="elements__card-image"
-          />
-          <div class="elements__card-text">
-            <p class="elements__card-name">Valle de Yosemite</p>
-            <button class="elements__card-like"></button>
-          </div>
-        </div>
-        <div class="elements__card">
-          <img
-            src="./images/Louise.png"
-            alt="Lago Louise"
-            class="elements__card-image"
-          />
-          <div class="elements__card-text">
-            <p class="elements__card-name">Lago Louise</p>
-            <button class="elements__card-like"></button>
-          </div>
-        </div>
-        <div class="elements__card">
-          <img
-            src="./images/Montañas.png"
-            alt="Montañas Calvas"
-            class="elements__card-image"
-          />
-          <div class="elements__card-text">
-            <p class="elements__card-name">Montañas Calvas</p>
-            <button class="elements__card-like"></button>
-          </div>
-        </div>
-        <div class="elements__card">
-          <img
-            src="./images/Latemar.png"
-            alt="Latemar"
-            class="elements__card-image"
-          />
-          <div class="elements__card-text">
-            <p class="elements__card-name">Latemar</p>
-            <button class="elements__card-like"></button>
-          </div>
-        </div>
-        <div class="elements__card">
-          <img
-            src="./images/Vanois.png"
-            alt="Vanois National"
-            class="elements__card-image"
-          />
-          <div class="elements__card-text">
-            <p class="elements__card-name">Vanois National...</p>
-            <button class="elements__card-like"></button>
-          </div>
-        </div>
-        <div class="elements__card">
-          <img
-            src="./images/Lago.png"
-            alt="Lago di Braies"
-            class="elements__card-image"
-          />
-          <div class="elements__card-text">
-            <p class="elements__card-name">Lago di Braies</p>
-            <button class="elements__card-like"></button>
-          </div>
-        </div>
-      </section>
+      <section class="elements"></section>
       <section class="popup">
         <div class="popup__container">
           <h2 class="popup__form-title">Editar perfil</h2>
@@ -134,6 +67,34 @@
           </form>
         </div>
         <div class="popup__button-close"></div>
+      </section>
+      <section class="popup-add">
+        <div class="popup-add__container">
+          <h2 class="popup-add__form-title">Nuevo Lugar</h2>
+          <form class="popup-add__form">
+            <input
+              class="popup-add__form-place"
+              type="text"
+              name="place"
+              placeholder="Título"
+            />
+            <input
+              class="popup-add__form-url"
+              type="url"
+              name="url"
+              placeholder="Enlace a la imagen"
+            />
+            <button class="popup-add__form-button-create">Crear</button>
+          </form>
+        </div>
+        <div class="popup-add__button-close"></div>
+      </section>
+      <section class="elements__popup">
+        <div class="elements__popup-container">
+          <img src="" alt="" class="elements__popup-img" />
+          <button class="elements__popup-button-close"></button>
+          <p class="elements__popup-text"></p>
+        </div>
       </section>
       <footer class="footer">
         <p class="footer__copyright">&#169; 2024 Around The U.S.</p>

@@ -60,6 +60,7 @@
 }
 
 .profile__info-button:hover {
+  cursor: pointer;
   opacity: 0.5;
 }
 
@@ -78,6 +79,7 @@
 }
 
 .profile__info-button-add:hover {
+  cursor: pointer;
   opacity: 0.5;
 }
 
