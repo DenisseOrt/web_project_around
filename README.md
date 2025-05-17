@@ -7,4 +7,4 @@ En este proyecto aplicamos funciones basicas adquiridas de Javascript con el DOM
 
 Utilizamos Javascript para manipular el DOM, gracias a figma obtuvimos el diseño y las dimensiones, y con las media queries logramos que sea adaptativo para diferentes dispositivos.
 
-https://github.com/DenisseOrt/web_project_around
+https://denisseort.github.io/web_project_around/
