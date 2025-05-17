@@ -63,75 +63,6 @@ addForm.addEventListener("submit", (event) => {
 });
 
 // crear nueva tarjeta
-function createCard(title, imageUrl) {
-  const card = document.createElement("div");
-  card.classList.add("elements__card");
-
-  card.innerHTML = `
-    <button class="elements__card-delete"></button>
-    <img src="${imageUrl}" alt="${title}" class="elements__card-image" />
-    <div class="elements__card-text">
-      <p class="elements__card-name">${title}</p>
-      <button class="elements__card-like"></button>
-    </div>
-  `;
-
-  const deleteButton = card.querySelector(".elements__card-delete");
-  deleteButton.addEventListener("click", () => {
-    card.remove();
-  });
-
-  const likeButton = card.querySelector(".elements__card-like");
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("elements__card-like_active");
-  });
-
-  return card;
-}
-
-function initializeCardEvents(card) {
-  const deleteButton = card.querySelector(".elements__card-delete");
-  const likeButton = card.querySelector(".elements__card-like");
-
-  if (deleteButton) {
-    deleteButton.addEventListener("click", () => {
-      card.remove();
-    });
-  }
-
-  if (likeButton) {
-    likeButton.addEventListener("click", () => {
-      likeButton.classList.toggle("elements__card-like_active");
-    });
-  }
-}
-
-document.querySelectorAll(".elements__card").forEach(initializeCardEvents);
-
-// popup imagen
-const popupImage = document.querySelector(".elements__popup");
-const popupImg = popupImage.querySelector(".elements__popup-img");
-const popupText = popupImage.querySelector(".elements__popup-text");
-const popupCloseBtn = popupImage.querySelector(".elements__popup-button-close");
-
-function openImagePopup(imageSrc, altText) {
-  popupImg.src = imageSrc;
-  popupImg.alt = altText;
-  popupText.textContent = altText;
-  popupImage.classList.add("popup_opened");
-}
-
-popupCloseBtn.addEventListener("click", () => {
-  popupImage.classList.remove("popup_opened");
-});
-
-cardsContainer.addEventListener("click", (event) => {
-  if (event.target.classList.contains("elements__card-image")) {
-    const img = event.target;
-    openImagePopup(img.src, img.alt);
-  }
-});
-
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -159,7 +90,74 @@ const initialCards = [
   },
 ];
 
+function createCard(title, imageUrl) {
+  const template = document.getElementById("card__template");
+  const card = template.content
+    .cloneNode(true)
+    .querySelector(".elements__card");
+
+  const cardImage = card.querySelector(".elements__card-image");
+  const cardName = card.querySelector(".elements__card-name");
+  const cardDeleteButton = card.querySelector(".elements__card-delete");
+  const cardLikeButton = card.querySelector(".elements__card-like");
+
+  cardImage.src = imageUrl;
+  cardImage.alt = title;
+  cardName.textContent = title;
+
+  cardDeleteButton.addEventListener("click", () => {
+    card.remove();
+  });
+
+  cardLikeButton.addEventListener("click", () => {
+    cardLikeButton.classList.toggle("elements__card-like_active");
+  });
+
+  return card;
+}
+
 initialCards.forEach((cardData) => {
   const cardElement = createCard(cardData.name, cardData.link);
   cardsContainer.append(cardElement);
+});
+
+function initializeCardEvents(card) {
+  const deleteButton = card.querySelector(".elements__card-delete");
+  const likeButton = card.querySelector(".elements__card-like");
+
+  if (deleteButton) {
+    deleteButton.addEventListener("click", () => {
+      card.remove();
+    });
+  }
+
+  if (likeButton) {
+    likeButton.addEventListener("click", () => {
+      likeButton.classList.toggle("elements__card-like_active");
+    });
+  }
+}
+
+// popup imagen
+const popupImage = document.querySelector(".elements__popup");
+const popupImg = popupImage.querySelector(".elements__popup-img");
+const popupText = popupImage.querySelector(".elements__popup-text");
+const popupCloseBtn = popupImage.querySelector(".elements__popup-button-close");
+
+function openImagePopup(imageSrc, altText) {
+  popupImg.src = imageSrc;
+  popupImg.alt = altText;
+  popupText.textContent = altText;
+  popupImage.classList.add("popup_opened");
+}
+
+popupCloseBtn.addEventListener("click", () => {
+  popupImage.classList.remove("popup_opened");
+});
+
+cardsContainer.addEventListener("click", (event) => {
+  if (event.target.classList.contains("elements__card-image")) {
+    const img = event.target;
+    openImagePopup(img.src, img.alt);
+  }
 });
