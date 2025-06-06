@@ -161,3 +161,41 @@ cardsContainer.addEventListener("click", (event) => {
     openImagePopup(img.src, img.alt);
   }
 });
+
+//cerrar popups
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
+  popup.classList.remove("popup-add_opened");
+}
+
+function setPopupEventListeners(popup) {
+  popup.addEventListener("mousedown", (event) => {
+    if (event.target === popup) {
+      closePopup(popup);
+    }
+  });
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    const openedPopup = document.querySelector(
+      ".popup_opened, .popup-add_opened, .elements__popup.popup_opened"
+    );
+    if (openedPopup) {
+      closePopup(openedPopup);
+    }
+  }
+});
+
+setPopupEventListeners(document.querySelector(".popup"));
+setPopupEventListeners(document.querySelector(".popup-add"));
+setPopupEventListeners(document.querySelector(".elements__popup"));
+
+enableValidation({
+  formSelector: ".popup__form, .popup-add__form",
+  inputSelector: "input",
+  submitButtonSelector: "button[type='submit'], .popup-add__form-button-create",
+  inactiveButtonClass: "popup__form-button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error-visible",
+});

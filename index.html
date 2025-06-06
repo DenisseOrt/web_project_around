@@ -48,22 +48,30 @@
       <section class="popup">
         <div class="popup__container">
           <h2 class="popup__form-title">Editar perfil</h2>
-          <form class="popup__form">
+          <form class="popup__form" novalidate>
             <input
-              class="popup__form-name"
+              class="popup__input popup__form-name"
               type="text"
               id="name"
               name="name"
               placeholder="Nombre"
+              required
+              minlength="2"
+              maxlength="40"
             />
+            <span class="popup__input-error" id="name-error"></span>
             <input
-              class="popup__form-occupation"
+              class="popup__input popup__form-occupation"
               type="text"
               id="occupation"
               name="occupation"
               placeholder="Acerca de mi"
+              required
+              minlength="2"
+              maxlength="200"
             />
-            <button class="popup__form-button">Guardar</button>
+            <span class="popup__input-error" id="occupation-error"></span>
+            <button type="submit" class="popup__form-button">Guardar</button>
           </form>
         </div>
         <div class="popup__button-close"></div>
@@ -71,20 +79,30 @@
       <section class="popup-add">
         <div class="popup-add__container">
           <h2 class="popup-add__form-title">Nuevo Lugar</h2>
-          <form class="popup-add__form">
+          <form class="popup-add__form" novalidate>
             <input
-              class="popup-add__form-place"
+              class="popup__input popup-add__form-place"
               type="text"
+              id="place"
               name="place"
               placeholder="Título"
+              required
+              minlength="2"
+              maxlength="30"
             />
+            <span class="popup__input-error" id="place-error"></span>
             <input
-              class="popup-add__form-url"
+              class="popup__input popup-add__form-url"
               type="url"
+              id="url"
               name="url"
               placeholder="Enlace a la imagen"
+              required
             />
-            <button class="popup-add__form-button-create">Crear</button>
+            <span class="popup__input-error" id="url-error"></span>
+            <button type="submit" class="popup-add__form-button-create">
+              Crear
+            </button>
           </form>
         </div>
         <div class="popup-add__button-close"></div>
@@ -110,6 +128,7 @@
         <p class="footer__copyright">&#169; 2024 Around The U.S.</p>
       </footer>
     </main>
+    <script src="scripts/validate.js" defer></script>
     <script src="scripts/index.js" defer></script>
   </body>
 </html>
